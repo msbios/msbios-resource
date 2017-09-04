@@ -11,7 +11,19 @@ use Zend\InputFilter\InputFilter;
  * Class ModuleInputFilter
  * @package MSBios\Resource\InputFilter
  */
-class ModuleInputFilter extends InputFilter implements LazyInputFilterInterface
+class ModuleInputFilter extends InputFilter
 {
-
+    /**
+     * TemplateInputFilter constructor.
+     */
+    public function __construct()
+    {
+        $this->add([
+            'name' => 'title',
+            'required' => true
+        ])->add([
+            'name' => 'module',
+            'required' => true
+        ]);
+    }
 }

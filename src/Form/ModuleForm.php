@@ -5,6 +5,7 @@
  */
 namespace MSBios\Resource\Form;
 
+use MSBios\Resource\Initializer\LazyFormAwareInterface;
 use Zend\Form\Element\Text;
 use Zend\Form\Form;
 
@@ -12,23 +13,17 @@ use Zend\Form\Form;
  * Class ModuleForm
  * @package MSBios\Resource\Form
  */
-class ModuleForm extends Form
+class ModuleForm extends Form implements LazyFormAwareInterface
 {
     /**
-     * UserForm constructor.
-     * @param int|null|string $name
-     * @param array $options
+     *
      */
-    public function __construct($name = __CLASS__, array $options = [])
+    public function init()
     {
-        parent::__construct($name, $options);
-
         $this->add([
             'type' => Text::class,
             'name' => 'title'
-        ]);
-
-        $this->add([
+        ])->add([
             'type' => Text::class,
             'name' => 'module'
         ]);

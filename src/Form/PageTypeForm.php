@@ -6,26 +6,25 @@
 namespace MSBios\Resource\Form;
 
 use MSBios\Resource\Initializer\LazyFormAwareInterface;
-use Zend\Form\Element\Text;
 use Zend\Form\Form;
 
 /**
- * Class LayoutForm
+ * Class ModuleForm
  * @package MSBios\Resource\Form
  */
-class LayoutForm extends Form implements LazyFormAwareInterface
+class PageTypeForm extends Form implements LazyFormAwareInterface
 {
     /**
      *
      */
     public function init()
     {
-        $this->add([
-            'type' => Text::class,
-            'name' => 'title'
-        ])->add([
-            'type' => Text::class,
-            'name' => 'template'
-        ]);
+        //$this->add([
+        //    'type' => Text::class,
+        //    'name' => 'title'
+        //])->add([
+        //    'type' => Text::class,
+        //    'name' => 'module'
+        //]);
     }
 }

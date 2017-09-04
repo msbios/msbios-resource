@@ -45,25 +45,25 @@ class Module implements
      */
     public function onBootstrap(EventInterface $e)
     {
-        /** @var ApplicationInterface $target */
-        $target = $e->getTarget();
+//        /** @var ApplicationInterface $target */
+//        $target = $e->getTarget();
+//
+//        /** @var ServiceManager $serviceManager */
+//        $serviceManager = $target->getServiceManager();
+//
+//        /** @var  $platform */
+//        $platform = $serviceManager
+//            ->get(EntityManager::class)
+//            ->getConnection()
+//            ->getDatabasePlatform();
+//
+//        $platform->registerDoctrineTypeMapping('enum', 'string');
+//        $platform->registerDoctrineTypeMapping('bit', 'boolean');
 
-        /** @var ServiceManager $serviceManager */
-        $serviceManager = $target->getServiceManager();
-
-        /** @var  $platform */
-        $platform = $serviceManager
-            ->get(EntityManager::class)
-            ->getConnection()
-            ->getDatabasePlatform();
-
-        $platform->registerDoctrineTypeMapping('enum', 'string');
-        $platform->registerDoctrineTypeMapping('bit', 'boolean');
-
-        (new LazyListenerAggregate(
-            $serviceManager->get(self::class)->get('listeners')->toArray(),
-            $serviceManager
-        ))->attach($target->getEventManager());
+        // (new LazyListenerAggregate(
+        //     $serviceManager->get(self::class)->get('listeners')->toArray(),
+        //     $serviceManager
+        // ))->attach($target->getEventManager());
     }
 
     /**

@@ -11,37 +11,26 @@ use MSBios\Resource\Entity;
 /**
  * Class Layout
  * @package MSBios\Resource\Entity
- *
- * @ORM\Entity
- * @ORM\Table(name="sys_t_layouts")
  */
-class Layout extends Entity
+class Layout
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @var
      */
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="title", type="string", length=100, nullable=false)
+     * @var
      */
     private $title;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="template", type="string", length=255, nullable=false)
+     * @var
      */
     private $template;
 
     /**
-     * @return int
+     * @return mixed
      */
     public function getId()
     {
@@ -49,7 +38,7 @@ class Layout extends Entity
     }
 
     /**
-     * @param int $id
+     * @param mixed $id
      */
     public function setId($id)
     {
@@ -57,7 +46,7 @@ class Layout extends Entity
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getTitle()
     {
@@ -65,7 +54,7 @@ class Layout extends Entity
     }
 
     /**
-     * @param string $title
+     * @param mixed $title
      */
     public function setTitle($title)
     {
@@ -73,7 +62,7 @@ class Layout extends Entity
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getTemplate()
     {
@@ -81,10 +70,11 @@ class Layout extends Entity
     }
 
     /**
-     * @param string $template
+     * @param mixed $template
      */
     public function setTemplate($template)
     {
         $this->template = $template;
     }
+
 }
