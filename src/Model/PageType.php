@@ -5,66 +5,44 @@
  */
 namespace MSBios\Resource\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Class PageType
  * @package MSBios\Resource\Entity
- *
- * @ORM\Entity
- * @ORM\Table(name="sys_t_page_types")
  */
 class PageType
 {
     /**
-     * @var integer
-     *
-     * @ORM\Id
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @var
      */
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="title", type="string", length=100, nullable=false)
+     * @var
      */
     private $title;
 
     /**
-     * @var Module
-     *
-     * @ORM\ManyToOne(targetEntity="Module")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="moduleid", referencedColumnName="id")
-     * })
+     * @var
      */
     private $module;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="controller", type="string", length=100, nullable=false)
+     * @var
      */
     private $controller;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="action", type="string", length=100, nullable=false)
+     * @var
      */
     private $action;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="icon", type="string", length=20, nullable=false)
+     * @var
      */
     private $icon;
 
     /**
-     * @return int
+     * @return mixed
      */
     public function getId()
     {
@@ -72,7 +50,7 @@ class PageType
     }
 
     /**
-     * @param int $id
+     * @param mixed $id
      */
     public function setId($id)
     {
@@ -80,7 +58,7 @@ class PageType
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getTitle()
     {
@@ -88,7 +66,7 @@ class PageType
     }
 
     /**
-     * @param string $title
+     * @param mixed $title
      */
     public function setTitle($title)
     {
@@ -96,7 +74,7 @@ class PageType
     }
 
     /**
-     * @return Module
+     * @return mixed
      */
     public function getModule()
     {
@@ -104,7 +82,7 @@ class PageType
     }
 
     /**
-     * @param Module $module
+     * @param mixed $module
      */
     public function setModule($module)
     {
@@ -112,7 +90,7 @@ class PageType
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getController()
     {
@@ -120,7 +98,7 @@ class PageType
     }
 
     /**
-     * @param string $controller
+     * @param mixed $controller
      */
     public function setController($controller)
     {
@@ -128,7 +106,7 @@ class PageType
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getAction()
     {
@@ -136,7 +114,7 @@ class PageType
     }
 
     /**
-     * @param string $action
+     * @param mixed $action
      */
     public function setAction($action)
     {
@@ -144,7 +122,7 @@ class PageType
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getIcon()
     {
@@ -152,7 +130,7 @@ class PageType
     }
 
     /**
-     * @param string $icon
+     * @param mixed $icon
      */
     public function setIcon($icon)
     {

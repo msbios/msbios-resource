@@ -5,63 +5,33 @@
  */
 namespace MSBios\Resource\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use MSBios\Stdlib\Object;
 
 /**
  * Class Session
  * @package MSBios\Resource\Entity
- *
- * @ORM\Entity
- * @ORM\Table(name="sys_t_sessions")
  */
-class Session
+class Session extends Object
 {
     /**
-     * @var integer
-     *
-     * @ORM\Id
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
-
-    /**
-     * @ORM\Column(type="string")
+     * @var
      */
     private $name;
 
     /**
-     * @ORM\Column(type="object")
+     * @var
      */
-    private $data;
+    private $value;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var
      */
     private $modified;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var
      */
     private $lifetime;
-
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param $id
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-        return $this;
-    }
 
     /**
      * @return mixed
@@ -84,18 +54,18 @@ class Session
     /**
      * @return mixed
      */
-    public function getData()
+    public function getValue()
     {
-        return $this->data;
+        return $this->value;
     }
 
     /**
-     * @param $data
+     * @param $value
      * @return $this
      */
-    public function setData($data)
+    public function setValue($value)
     {
-        $this->data = $data;
+        $this->value = $value;
         return $this;
     }
 

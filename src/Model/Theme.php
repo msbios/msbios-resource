@@ -5,55 +5,23 @@
  */
 namespace MSBios\Resource\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use MSBios\Stdlib\Object;
 
 /**
  * Class Theme
  * @package MSBios\Resource\Entity
- *
- * @ORM\Entity
- * @ORM\Table(name="sys_t_themes")
  */
-class Theme
+class Theme extends Object
 {
     /**
-     * @var integer
-     *
-     * @ORM\Id
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="title", type="string", length=100, nullable=false)
+     * @var
      */
     private $title;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="template", type="string", length=100, nullable=false)
+     * @var
      */
     private $template;
-
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param int $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
 
     /**
      * @return string
@@ -64,11 +32,13 @@ class Theme
     }
 
     /**
-     * @param string $title
+     * @param $title
+     * @return $this
      */
     public function setTitle($title)
     {
         $this->title = $title;
+        return $this;
     }
 
     /**
@@ -80,10 +50,12 @@ class Theme
     }
 
     /**
-     * @param string $template
+     * @param $template
+     * @return $this
      */
     public function setTemplate($template)
     {
         $this->template = $template;
+        return $this;
     }
 }

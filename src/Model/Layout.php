@@ -5,20 +5,14 @@
  */
 namespace MSBios\Resource\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-use MSBios\Resource\Entity;
+use MSBios\Stdlib\Object;
 
 /**
  * Class Layout
  * @package MSBios\Resource\Entity
  */
-class Layout
+class Layout extends Object
 {
-    /**
-     * @var
-     */
-    private $id;
-
     /**
      * @var
      */
@@ -28,22 +22,6 @@ class Layout
      * @var
      */
     private $template;
-
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
 
     /**
      * @return mixed
@@ -76,5 +54,4 @@ class Layout
     {
         $this->template = $template;
     }
-
 }

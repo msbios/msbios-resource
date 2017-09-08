@@ -5,58 +5,26 @@
  */
 namespace MSBios\Resource\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use MSBios\Stdlib\Object;
 
 /**
  * Class Module
  * @package MSBios\Resource\Entity
- *
- * @ORM\Entity
- * @ORM\Table(name="sys_t_modules")
  */
-class Module
+class Module extends Object
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="title", type="string", length=255, nullable=false)
+     * @var
      */
     private $title;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="module", type="string", length=100, nullable=false)
+     * @var
      */
     private $module;
 
     /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param int $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return string
+     * @return mixed
      */
     public function getTitle()
     {
@@ -64,7 +32,7 @@ class Module
     }
 
     /**
-     * @param string $title
+     * @param $title
      */
     public function setTitle($title)
     {
@@ -72,7 +40,7 @@ class Module
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getModule()
     {
@@ -80,7 +48,7 @@ class Module
     }
 
     /**
-     * @param string $module
+     * @param $module
      */
     public function setModule($module)
     {

@@ -5,23 +5,12 @@
  */
 namespace MSBios\Resource\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use MSBios\Stdlib\Object;
 
 /**
  * Class Route
  * @package MSBios\Resource\Entity
- *
- * @ORM\Entity
- * @ORM\Table(name="sys_t_routes")
  */
-class Route
+class Route extends Object
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
 }

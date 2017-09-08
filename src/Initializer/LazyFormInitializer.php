@@ -46,7 +46,6 @@ class LazyFormInitializer implements InitializerInterface
                     $hydratorManager->get($formName)
                 );
             }
-
         }
     }
 }

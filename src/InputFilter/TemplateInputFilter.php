@@ -27,5 +27,4 @@ class TemplateInputFilter extends InputFilter
             'required' => true
         ]);
     }
-
 }

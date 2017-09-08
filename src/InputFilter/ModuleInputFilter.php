@@ -14,7 +14,7 @@ use Zend\InputFilter\InputFilter;
 class ModuleInputFilter extends InputFilter
 {
     /**
-     * TemplateInputFilter constructor.
+     * ModuleInputFilter constructor.
      */
     public function __construct()
     {

@@ -6,12 +6,11 @@
 
 namespace MSBios\Resource\Initializer;
 
-use Zend\Config\Config;
-
 /**
  * Trait LazyFormAwareTrait
  * @package MSBios\Resource\Initializer
  */
 trait LazyFormAwareTrait
 {
+    // Some Thing Realization
 }

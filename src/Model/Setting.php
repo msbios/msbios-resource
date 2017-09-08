@@ -5,102 +5,63 @@
  */
 namespace MSBios\Resource\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-use MSBios\Resource\Entity;
+use MSBios\Stdlib\Object;
 
 /**
  * Class Setting
  * @package MSBios\Resource\Entity
- *
- * @ORM\Entity
- * @ORM\Table(name="sys_t_settings")
  */
-class Setting extends Entity
+class Setting extends Object
 {
     /**
-     * @var integer
-     *
-     * @ORM\Id
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="title", type="string", length=255, nullable=false)
+     * @var
      */
     private $title;
+
     /**
-     * @var string
-     *
-     * @ORM\Column(name="identifier", type="string", length=100, nullable=false)
+     * @var
      */
     private $identifier;
+
     /**
-     * @var string
-     *
-     * @ORM\Column(name="base_url", type="string", length=255, nullable=false)
+     * @var
      */
     private $baseUrl;
+
     /**
-     * @var string
-     *
-     * @ORM\Column(name="ssl_base_url", type="string", length=255, nullable=false)
+     * @var
      */
     private $sslBaseUrl;
+
     /**
-     * @var string
-     *
-     * @ORM\Column(name="cdn_url", type="string", length=255, nullable=false)
+     * @var
      */
     private $cdnUrl;
+
     /**
-     * @var string
-     *
-     * @ORM\Column(name="ssl_cdn_url", type="string", length=255, nullable=false)
+     * @var
      */
     private $sslCdnUrl;
+
     /**
-     * @var boolean
-     *
-     * @ORM\Column(name="forcessl", type="smallint", nullable=false)
+     * @var bool
      */
     private $forcessl = false;
+
     /**
      * @var string
-     *
-     * @ORM\Column(name="locale", type="string", length=20, nullable=false)
      */
     private $locale = 'en_US';
+
     /**
      * @var string
-     *
-     * @ORM\Column(name="timezone", type="string", length=50, nullable=false)
      */
     private $timezone = "America/New_York";
+
     /**
-     * @var string
-     *
-     * @ORM\Column(name="options", type="json_array", nullable=false)
+     * @var array
      */
     private $options = [];
-
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param null $id
-     */
-    public function setId($id = null)
-    {
-        $this->id = $id;
-    }
 
     /**
      * @return string
@@ -111,11 +72,13 @@ class Setting extends Entity
     }
 
     /**
-     * @param string $title
+     * @param $title
+     * @return $this
      */
     public function setTitle($title)
     {
         $this->title = $title;
+        return $this;
     }
 
     /**
@@ -127,11 +90,13 @@ class Setting extends Entity
     }
 
     /**
-     * @param string $identifier
+     * @param $identifier
+     * @return $this
      */
     public function setIdentifier($identifier)
     {
         $this->identifier = $identifier;
+        return $this;
     }
 
     /**
@@ -143,11 +108,13 @@ class Setting extends Entity
     }
 
     /**
-     * @param string $baseUrl
+     * @param $baseUrl
+     * @return $this
      */
     public function setBaseUrl($baseUrl)
     {
         $this->baseUrl = $baseUrl;
+        return $this;
     }
 
     /**
@@ -159,11 +126,13 @@ class Setting extends Entity
     }
 
     /**
-     * @param string $sslBaseUrl
+     * @param $sslBaseUrl
+     * @return $this
      */
     public function setSslBaseUrl($sslBaseUrl)
     {
         $this->sslBaseUrl = $sslBaseUrl;
+        return $this;
     }
 
     /**
@@ -175,11 +144,13 @@ class Setting extends Entity
     }
 
     /**
-     * @param string $cdnUrl
+     * @param $cdnUrl
+     * @return $this
      */
     public function setCdnUrl($cdnUrl)
     {
         $this->cdnUrl = $cdnUrl;
+        return $this;
     }
 
     /**
@@ -191,11 +162,13 @@ class Setting extends Entity
     }
 
     /**
-     * @param string $sslCdnUrl
+     * @param $sslCdnUrl
+     * @return $this
      */
     public function setSslCdnUrl($sslCdnUrl)
     {
         $this->sslCdnUrl = $sslCdnUrl;
+        return $this;
     }
 
     /**
@@ -207,11 +180,13 @@ class Setting extends Entity
     }
 
     /**
-     * @param bool $forcessl
+     * @param $forcessl
+     * @return $this
      */
     public function setForcessl($forcessl)
     {
         $this->forcessl = $forcessl;
+        return $this;
     }
 
     /**
@@ -223,11 +198,13 @@ class Setting extends Entity
     }
 
     /**
-     * @param string $locale
+     * @param $locale
+     * @return $this
      */
     public function setLocale($locale)
     {
         $this->locale = $locale;
+        return $this;
     }
 
     /**
@@ -239,15 +216,17 @@ class Setting extends Entity
     }
 
     /**
-     * @param string $timezone
+     * @param $timezone
+     * @return $this
      */
     public function setTimezone($timezone)
     {
         $this->timezone = $timezone;
+        return $this;
     }
 
     /**
-     * @return string
+     * @return array
      */
     public function getOptions()
     {
@@ -255,10 +234,12 @@ class Setting extends Entity
     }
 
     /**
-     * @param string $options
+     * @param $options
+     * @return $this
      */
     public function setOptions($options)
     {
         $this->options = $options;
+        return $this;
     }
 }
