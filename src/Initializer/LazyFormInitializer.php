@@ -48,4 +48,13 @@ class LazyFormInitializer implements InitializerInterface
             }
         }
     }
+
+    /**
+     * @param $an_array
+     * @return LazyFormInitializer
+     */
+    public static function __set_state($an_array)
+    {
+        return new self();
+    }
 }
