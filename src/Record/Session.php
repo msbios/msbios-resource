@@ -3,15 +3,15 @@
  * @access protected
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
-namespace MSBios\Resource\Entity;
+namespace MSBios\Resource\Record;
 
-use MSBios\Stdlib\Object;
+use MSBios\Resource\Record;
 
 /**
  * Class Session
- * @package MSBios\Resource\Entity
+ * @package MSBios\Resource\Record
  */
-class Session extends Object
+class Session extends Record
 {
     /**
      * @var

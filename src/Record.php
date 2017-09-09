@@ -5,17 +5,12 @@
  */
 namespace MSBios\Resource;
 
-use Doctrine\ORM\Mapping as ORM;
 use MSBios\Stdlib\Object;
 
 /**
- * Class Entity
- *
- * SomeEntity can be extend this class
- *
+ * Class Record
  * @package MSBios\Resource
- * @ORM\MappedSuperclass
  */
-abstract class Entity extends Object
+abstract class Record extends Object implements RecordInterface
 {
 }

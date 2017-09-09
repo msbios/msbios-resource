@@ -3,43 +3,22 @@
  * @access protected
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
-namespace MSBios\Resource\Entity;
+namespace MSBios\Resource\Record;
 
-use MSBios\Stdlib\Object;
+use MSBios\Resource\Record;
 
 /**
  * Class Theme
- * @package MSBios\Resource\Entity
+ * @package MSBios\Resource\Record
  */
-class Theme extends Object
+class Theme extends Record implements TitleAwareInterface
 {
-    /**
-     * @var
-     */
-    private $title;
+    use TitleAwareTrait;
 
     /**
      * @var
      */
     private $template;
-
-    /**
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * @param $title
-     * @return $this
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-        return $this;
-    }
 
     /**
      * @return string
