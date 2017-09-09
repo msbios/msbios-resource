@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8bb9718c4ef1011f5890df8bf3da75d1",
+    "content-hash": "2378d1248852651a687996aa50666cc7",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -74,16 +74,16 @@
         },
         {
             "name": "msbios/stdlib",
-            "version": "v0.0.4",
+            "version": "v0.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-stdlib.git",
-                "reference": "a277367ddbe175c7dc15fbd30af3a2154ecf80b0"
+                "reference": "ac8d1df1d7bebd7b982534f749a931a6898ae399"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-stdlib/zipball/a277367ddbe175c7dc15fbd30af3a2154ecf80b0",
-                "reference": "a277367ddbe175c7dc15fbd30af3a2154ecf80b0",
+                "url": "https://api.github.com/repos/msbios/msbios-stdlib/zipball/ac8d1df1d7bebd7b982534f749a931a6898ae399",
+                "reference": "ac8d1df1d7bebd7b982534f749a931a6898ae399",
                 "shasum": ""
             },
             "require": {
@@ -120,7 +120,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2017-09-08T17:52:25+00:00"
+            "time": "2017-09-09T10:03:35+00:00"
         },
         {
             "name": "psr/container",
