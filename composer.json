@@ -28,8 +28,8 @@
     "zendframework/zend-servicemanager": "^3.3",
     "zendframework/zend-modulemanager": "^2.8",
     "zendframework/zend-form": "^2.10",
-    "msbios/msbios": "^0.0.1",
-    "msbios/stdlib": "^0.0.5"
+    "msbios/msbios": "~1.0",
+    "msbios/stdlib": "~1.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^5.7",
