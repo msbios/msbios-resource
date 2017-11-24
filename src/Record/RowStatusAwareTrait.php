@@ -31,6 +31,4 @@ trait RowStatusAwareTrait
     {
         $this->rowStatus = $rowStatus;
     }
-
-
 }

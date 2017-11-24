@@ -6,17 +6,10 @@
  */
 namespace MSBios\Resource;
 
-use Doctrine\ORM\EntityManager;
 use MSBios\ModuleInterface;
-use Zend\EventManager\EventInterface;
-use Zend\EventManager\LazyListenerAggregate;
 use Zend\Loader\AutoloaderFactory;
 use Zend\Loader\StandardAutoloader;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
-use Zend\ModuleManager\Feature\BootstrapListenerInterface;
-use Zend\Mvc\ApplicationInterface;
-use Zend\Mvc\MvcEvent;
-use Zend\ServiceManager\ServiceManager;
 
 /**
  * Class Module
@@ -24,10 +17,10 @@ use Zend\ServiceManager\ServiceManager;
  */
 class Module implements
     ModuleInterface,
-    BootstrapListenerInterface,
     AutoloaderProviderInterface
 {
-    const VERSION = '0.0.1';
+    /** @const VERSION */
+    const VERSION = '1.0.3';
 
     /**
      * @return mixed
@@ -35,35 +28,6 @@ class Module implements
     public function getConfig()
     {
         return include __DIR__ . '/../config/module.config.php';
-    }
-
-    /**
-     * Listen to the bootstrap event
-     *
-     * @param EventInterface $e
-     * @return array
-     */
-    public function onBootstrap(EventInterface $e)
-    {
-//        /** @var ApplicationInterface $target */
-//        $target = $e->getTarget();
-//
-//        /** @var ServiceManager $serviceManager */
-//        $serviceManager = $target->getServiceManager();
-//
-//        /** @var  $platform */
-//        $platform = $serviceManager
-//            ->get(EntityManager::class)
-//            ->getConnection()
-//            ->getDatabasePlatform();
-//
-//        $platform->registerDoctrineTypeMapping('enum', 'string');
-//        $platform->registerDoctrineTypeMapping('bit', 'boolean');
-
-        // (new LazyListenerAggregate(
-        //     $serviceManager->get(self::class)->get('listeners')->toArray(),
-        //     $serviceManager
-        // ))->attach($target->getEventManager());
     }
 
     /**
