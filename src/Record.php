@@ -6,6 +6,7 @@
 namespace MSBios\Resource;
 
 use MSBios\Stdlib\Object;
+use Zend\Db\Adapter\AdapterInterface;
 
 /**
  * Class Record
@@ -13,4 +14,16 @@ use MSBios\Stdlib\Object;
  */
 abstract class Record extends Object implements RecordInterface
 {
+    /** @var  AdapterInterface */
+    protected $adapter;
+
+    /**
+     * Record constructor.
+     * @param AdapterInterface|null $adapter
+     */
+    public function __construct(AdapterInterface $adapter = null)
+    {
+        $this->adapter = $adapter;
+        parent::__construct();
+    }
 }

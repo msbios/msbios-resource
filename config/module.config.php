@@ -68,6 +68,11 @@ return [
         ],
     ],
 
+    'table_manager' => [
+        'factories' => [
+        ]
+    ],
+
     Module::class => [
         // Some Module Configuration
     ]

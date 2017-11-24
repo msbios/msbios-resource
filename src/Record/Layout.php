@@ -6,6 +6,8 @@
 namespace MSBios\Resource\Record;
 
 use MSBios\Resource\Record;
+use Zend\Db\RowGateway\RowGateway;
+use Zend\Db\RowGateway\RowGatewayInterface;
 
 /**
  * Class Layout
@@ -25,6 +27,7 @@ class Layout extends Record implements TitleAwareInterface
      */
     public function getTemplate()
     {
+        $row = new RowGateway('', '');
         return $this->template;
     }
 
