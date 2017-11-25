@@ -13,13 +13,14 @@ use Zend\Form\Form;
  * Class LayoutForm
  * @package MSBios\Resource\Form
  */
-class LayoutForm extends Form implements LazyFormAwareInterface
+class LayoutForm extends Form
 {
     /**
-     *
+     * @inheritdoc
      */
     public function init()
     {
+        parent::init();
         $this->add([
             'type' => Text::class,
             'name' => 'title'

@@ -15,10 +15,11 @@ use Zend\InputFilter\InputFilter;
 class TemplateInputFilter extends InputFilter
 {
     /**
-     * TemplateInputFilter constructor.
+     * @inheritdoc
      */
-    public function __construct()
+    public function init()
     {
+        parent::init();
         $this->add([
             'name' => 'title',
             'required' => true

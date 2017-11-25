@@ -4,16 +4,13 @@
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  * @link https://zfmodules.com/ZendExperts/ZeDb
  */
+
 namespace MSBios\Resource;
 
 use MSBios\ModuleInterface;
-use MSBios\Resource\Feature\TableProviderInterface;
 use Zend\Loader\AutoloaderFactory;
 use Zend\Loader\StandardAutoloader;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
-use Zend\ModuleManager\Feature\InitProviderInterface;
-use Zend\ModuleManager\ModuleManagerInterface;
-use Zend\Stdlib\ArrayUtils;
 
 /**
  * Class Module
@@ -21,23 +18,17 @@ use Zend\Stdlib\ArrayUtils;
  */
 class Module implements
     ModuleInterface,
-    AutoloaderProviderInterface,
-    InitProviderInterface
+    AutoloaderProviderInterface
 {
     /** @const VERSION */
-    const VERSION = '1.0.5';
+    const VERSION = '1.0.6';
 
     /**
      * @return mixed
      */
     public function getConfig()
     {
-        return ArrayUtils::merge(
-            include __DIR__ . '/../config/module.config.php',
-            [
-                'service_manager' => (new ConfigProvider)->getDependencyConfig()
-            ]
-        );
+        return include __DIR__ . '/../config/module.config.php';
     }
 
     /**
@@ -54,25 +45,5 @@ class Module implements
                 ],
             ],
         ];
-    }
-
-    /**
-     * Initialize workflow
-     *
-     * @param  ModuleManagerInterface $manager
-     * @return void
-     */
-    public function init(ModuleManagerInterface $manager)
-    {
-        $event = $manager->getEvent();
-        $container = $event->getParam('ServiceManager');
-        $serviceListener = $container->get('ServiceListener');
-
-        $serviceListener->addServiceManager(
-            'TableManager',
-            'table_manager',
-            TableProviderInterface::class,
-            'getTableManagerConfig'
-        );
     }
 }

@@ -24,7 +24,7 @@
     }
   },
   "require": {
-    "zendframework/zend-db": "^2.8",
+    "msbios/db": "^1.0",
     "msbios/stdlib": "^1.0",
     "msbios/form": "^1.0"
   },

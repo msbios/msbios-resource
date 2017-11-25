@@ -14,7 +14,7 @@ use Zend\Db\Adapter\AdapterInterface;
  */
 abstract class Record extends Object implements RecordInterface
 {
-    /** @var  AdapterInterface */
+    /** @var AdapterInterface */
     protected $adapter;
 
     /**

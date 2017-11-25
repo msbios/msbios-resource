@@ -15,14 +15,11 @@ use Zend\Form\Form;
 class ThemeForm extends Form
 {
     /**
-     * UserForm constructor.
-     * @param int|null|string $name
-     * @param array $options
+     * @inheritdoc
      */
-    public function __construct($name = __CLASS__, array $options = [])
+    public function init()
     {
-        parent::__construct($name, $options);
-
+        parent::init();
         $this->add([
             'type' => Text::class,
             'name' => 'title'

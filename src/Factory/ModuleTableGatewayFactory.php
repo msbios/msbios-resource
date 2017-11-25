@@ -6,11 +6,11 @@
 namespace MSBios\Resource\Factory;
 
 use Interop\Container\ContainerInterface;
+use MSBios\Db\TableGateway\TableGateway;
 use MSBios\Resource\Record\Module;
 use MSBios\Resource\Table\ModuleTableGateway;
 use Zend\Db\Adapter\AdapterInterface;
 use Zend\Db\TableGateway\Feature\RowGatewayFeature;
-use Zend\Db\TableGateway\TableGateway;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 /**

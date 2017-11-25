@@ -5,23 +5,11 @@
  */
 namespace MSBios\Resource\Table;
 
-use Zend\Db\TableGateway\TableGatewayInterface;
-
 /**
  * Class ModuleTableGateway
  * @package MSBios\Resource\Table
  */
-class ModuleTableGateway
+class ModuleTableGateway extends AbstractTableGateway
 {
-    /** @var  TableGatewayInterface */
-    protected $tableGateway;
 
-    /**
-     * ModuleTableGateway constructor.
-     * @param TableGatewayInterface $tableGateway
-     */
-    public function __construct(TableGatewayInterface $tableGateway)
-    {
-        $this->tableGateway = $tableGateway;
-    }
 }

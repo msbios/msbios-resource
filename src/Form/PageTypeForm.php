@@ -5,7 +5,6 @@
  */
 namespace MSBios\Resource\Form;
 
-use MSBios\Resource\Initializer\LazyFormAwareInterface;
 use Zend\Form\Element\Text;
 use Zend\Form\Form;
 
@@ -13,13 +12,14 @@ use Zend\Form\Form;
  * Class ModuleForm
  * @package MSBios\Resource\Form
  */
-class PageTypeForm extends Form implements LazyFormAwareInterface
+class PageTypeForm extends Form
 {
     /**
-     *
+     * @inheritdoc
      */
     public function init()
     {
+        parent::init();
         $this->add([
             'type' => Text::class,
             'name' => 'controller'
