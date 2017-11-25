@@ -70,6 +70,9 @@ return [
 
     'table_manager' => [
         'factories' => [
+            // Tables
+            Table\LayoutTableGateway::class =>
+                Factory\LayoutTableGatewayFactory::class
         ]
     ],
 

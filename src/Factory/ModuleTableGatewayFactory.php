@@ -6,24 +6,24 @@
 namespace MSBios\Resource\Factory;
 
 use Interop\Container\ContainerInterface;
-use MSBios\Resource\Record\Layout;
-use MSBios\Resource\Table\LayoutTableGateway;
+use MSBios\Resource\Record\Module;
+use MSBios\Resource\Table\ModuleTableGateway;
 use Zend\Db\Adapter\AdapterInterface;
 use Zend\Db\TableGateway\Feature\RowGatewayFeature;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 /**
- * Class LayoutTableGatewayFactory
+ * Class ModuleTableGatewayFactory
  * @package MSBios\Resource\Factory
  */
-class LayoutTableGatewayFactory implements FactoryInterface
+class ModuleTableGatewayFactory implements FactoryInterface
 {
     /**
      * @param ContainerInterface $container
      * @param string $requestedName
      * @param array|null $options
-     * @return LayoutTableGateway
+     * @return ModuleTableGateway
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
@@ -31,10 +31,10 @@ class LayoutTableGatewayFactory implements FactoryInterface
         $adapter = $container->get(AdapterInterface::class);
 
         /** @var RowGatewayFeature $feature */
-        $feature = new RowGatewayFeature(new Layout($adapter));
+        $feature = new RowGatewayFeature(new Module($adapter));
 
-        return new LayoutTableGateway(
-            new TableGateway('sys_t_layouts', $adapter, $feature)
+        return new ModuleTableGateway(
+            new TableGateway('sys_t_modules', $adapter, $feature)
         );
     }
 }
