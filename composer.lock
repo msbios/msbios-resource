@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "04d49fd99b4e394cfb1748c0995a4ff1",
+    "content-hash": "98a5744f2dcb0556bbc423fb3d8f3584",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -39,16 +39,16 @@
         },
         {
             "name": "msbios/db",
-            "version": "v1.0.0",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-db.git",
-                "reference": "f14468dda337fe3904a9ca50d5447c954081552a"
+                "reference": "356365733c1cffae5368f9165b6f450700f053fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-db/zipball/f14468dda337fe3904a9ca50d5447c954081552a",
-                "reference": "f14468dda337fe3904a9ca50d5447c954081552a",
+                "url": "https://api.github.com/repos/msbios/msbios-db/zipball/356365733c1cffae5368f9165b6f450700f053fd",
+                "reference": "356365733c1cffae5368f9165b6f450700f053fd",
                 "shasum": ""
             },
             "require": {
@@ -59,6 +59,11 @@
                 "msbios/test": "^1.0"
             },
             "type": "library",
+            "extra": {
+                "zf": {
+                    "component": "MSBios\\Db"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "MSBios\\Db\\": "src/"
@@ -79,7 +84,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2017-11-25T13:39:00+00:00"
+            "time": "2017-11-25T16:39:11+00:00"
         },
         {
             "name": "msbios/form",
@@ -230,16 +235,16 @@
         },
         {
             "name": "msbios/stdlib",
-            "version": "v1.0.6",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-stdlib.git",
-                "reference": "18d5341793f82988c91d0d3da30636a1d69851b6"
+                "reference": "c687fea8209a20b1c49fbacb5a7bfbd3d83ef7f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-stdlib/zipball/18d5341793f82988c91d0d3da30636a1d69851b6",
-                "reference": "18d5341793f82988c91d0d3da30636a1d69851b6",
+                "url": "https://api.github.com/repos/msbios/msbios-stdlib/zipball/c687fea8209a20b1c49fbacb5a7bfbd3d83ef7f0",
+                "reference": "c687fea8209a20b1c49fbacb5a7bfbd3d83ef7f0",
                 "shasum": ""
             },
             "require": {
@@ -274,7 +279,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2017-11-04T22:21:10+00:00"
+            "time": "2017-11-25T21:51:45+00:00"
         },
         {
             "name": "psr/container",
