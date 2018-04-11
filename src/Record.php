@@ -5,14 +5,14 @@
  */
 namespace MSBios\Resource;
 
-use MSBios\Stdlib\Object;
+use MSBios\Stdlib\AbstractObject;
 use Zend\Db\Adapter\AdapterInterface;
 
 /**
  * Class Record
  * @package MSBios\Resource
  */
-abstract class Record extends Object implements RecordInterface
+abstract class Record extends AbstractObject implements RecordInterface
 {
     /** @var AdapterInterface */
     protected $adapter;
