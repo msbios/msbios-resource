@@ -14,7 +14,7 @@ use Zend\Db\TableGateway\TableGatewayInterface;
  */
 abstract class AbstractTableGateway
 {
-    /** @var  TableGatewayInterface */
+    /** @var TableGatewayInterface */
     protected $tableGateway;
 
     /**

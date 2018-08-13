@@ -7,7 +7,6 @@ namespace MSBios\Resource\Record;
 
 use MSBios\Resource\Record;
 use Zend\Db\RowGateway\RowGateway;
-use Zend\Db\RowGateway\RowGatewayInterface;
 
 /**
  * Class Layout

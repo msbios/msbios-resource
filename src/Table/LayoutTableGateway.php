@@ -11,5 +11,5 @@ namespace MSBios\Resource\Table;
  */
 class LayoutTableGateway extends AbstractTableGateway
 {
-
+    // ...
 }
