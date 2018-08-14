@@ -6,10 +6,10 @@
 namespace MSBios\Resource;
 
 /**
- * Interface Record
+ * Interface RecordRepositoryInterface
  * @package MSBios\Resource
  */
-interface RecordInterface
+interface RecordRepositoryInterface
 {
     // ...
 }

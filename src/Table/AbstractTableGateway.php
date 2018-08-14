@@ -3,16 +3,16 @@
  * @access protected
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
-
 namespace MSBios\Resource\Table;
 
+use MSBios\Resource\RecordRepositoryInterface;
 use Zend\Db\TableGateway\TableGatewayInterface;
 
 /**
  * Class AbstractTableGateway
  * @package MSBios\Resource\Table
  */
-abstract class AbstractTableGateway
+abstract class AbstractTableGateway implements RecordRepositoryInterface
 {
     /** @var TableGatewayInterface */
     protected $tableGateway;
