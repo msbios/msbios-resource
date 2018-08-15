@@ -8,7 +8,6 @@ namespace MSBios\Resource;
 use MSBios\Db\TableGateway\TableGatewayInterface;
 use MSBios\Resource\Exception\RowNotFoundException;
 use Zend\Db\ResultSet\ResultSet;
-use Zend\Db\TableGateway\TableGateway;
 use Zend\Paginator\Adapter\AdapterInterface;
 use Zend\Paginator\Adapter\DbTableGateway as TableGatewayPaginator;
 use Zend\Paginator\Paginator;
@@ -58,22 +57,21 @@ class RecordRepository implements RecordRepositoryInterface
     }
 
     /**
-     * @param array $data
+     * @param null $where
+     * @param null $order
+     * @param null $group
+     * @param null $having
      * @return Paginator
      */
-    public function fetchAll($data = [])
+    public function fetchAll($where = null, $order = null, $group = null, $having = null)
     {
-        /** @var TableGatewayInterface $tableGateway */
-        $tableGateway = $this->tableGateway;
-
         /** @var AdapterInterface $adapter */
         $adapter = new TableGatewayPaginator(
-            new TableGateway(
-                $tableGateway->table,
-                $tableGateway->getAdapter(),
-                null,
-                $tableGateway->getResultSetPrototype()
-            )
+            $this->tableGateway,
+            $where,
+            $order,
+            $group,
+            $having
         );
 
         return new Paginator($adapter);
