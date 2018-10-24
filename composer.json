@@ -27,6 +27,7 @@
     "msbios/db": "^1.0",
     "msbios/stdlib": "^1.0",
     "msbios/form": "^1.0",
+    "msbios/validator": "^1.0",
     "zendframework/zend-paginator": "^2.8"
   },
   "require-dev": {
