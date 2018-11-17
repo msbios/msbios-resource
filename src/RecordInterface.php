@@ -13,5 +13,8 @@ use Zend\Db\RowGateway\RowGatewayInterface;
  */
 interface RecordInterface extends RowGatewayInterface
 {
-    // ...
+    /**
+     * @return string|\Zend\Db\Sql\TableIdentifier
+     */
+    public function getTable();
 }

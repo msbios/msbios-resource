@@ -13,5 +13,11 @@ use Zend\Db\RowGateway\RowGateway;
  */
 abstract class Record extends RowGateway implements RecordInterface
 {
-    // ...
+    /**
+     * @return string|\Zend\Db\Sql\TableIdentifier
+     */
+    public function getTable()
+    {
+        return $this->table;
+    }
 }

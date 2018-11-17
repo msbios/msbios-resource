@@ -30,13 +30,7 @@ class ConfigProvider
     public function getDependencyConfig()
     {
         return [
-            'factories' => [
-                TablePluginManager::class =>
-                    Factory\TablePluginManagerFactory::class
-            ],
-            'aliases' => [
-                'TableManager' => TablePluginManager::class
-            ]
+            // ...
         ];
     }
 }

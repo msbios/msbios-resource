@@ -3,11 +3,13 @@
  * @access protected
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
+
 namespace MSBios\Resource;
 
 use MSBios\Db\TableGateway\TableGatewayInterface;
 use MSBios\Resource\Exception\RowNotFoundException;
 use Zend\Db\ResultSet\ResultSet;
+use Zend\Db\RowGateway\RowGateway;
 use Zend\Paginator\Adapter\AdapterInterface;
 use Zend\Paginator\Adapter\DbTableGateway as TableGatewayPaginator;
 use Zend\Paginator\Paginator;
@@ -62,33 +64,43 @@ class RecordRepository implements RecordRepositoryInterface
      * @param null $group
      * @param null $having
      * @return Paginator
+     * @throws \Exception
      */
     public function fetchAll($where = null, $order = null, $group = null, $having = null)
     {
-        /** @var AdapterInterface $adapter */
-        $adapter = new TableGatewayPaginator(
-            $this->tableGateway,
-            $where,
-            $order,
-            $group,
-            $having
-        );
+        if ($where instanceof \Closure) {
+            /** @var AdapterInterface $adapter */
+            $adapter = $where($this->tableGateway, $order, $group, $having);
+
+            if (! ($adapter instanceof AdapterInterface)) {
+                throw new \Exception('Must be AdapterInterface');
+            }
+        } else {
+            /** @var AdapterInterface $adapter */
+            $adapter = new TableGatewayPaginator(
+                $this->tableGateway,
+                $where,
+                $order,
+                $group,
+                $having
+            );
+        }
 
         return new Paginator($adapter);
     }
 
     /**
-     * @param ArrayObject $object
-     * @return int
+     * @param RecordInterface|RowGateway $record
+     * @return mixed
      * @throws \Exception
      */
-    public function save(ArrayObject $object)
+    public function save(RecordInterface $record)
     {
         /** @var array $data */
-        $data = $object->getArrayCopy();
+        $data = $record->toArray();
 
         /** @var int $id */
-        $id = (int)$object['id'];
+        $id = (int)$data['id'];
 
         if (! $id) {
             return $this->tableGateway
@@ -115,7 +127,12 @@ class RecordRepository implements RecordRepositoryInterface
             $where = ['id' => (int)$where];
         }
 
-        return $this->tableGateway
+        if ($where instanceof RecordInterface) {
+            $where = ['id' => (int)$where['id']];
+        }
+
+        return $this
+            ->tableGateway
             ->delete($where);
     }
 }

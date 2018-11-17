@@ -23,9 +23,7 @@ class ThemeForm extends Form
         $this->add([
             'type' => Text::class,
             'name' => 'title'
-        ]);
-
-        $this->add([
+        ])->add([
             'type' => Text::class,
             'name' => 'template'
         ]);

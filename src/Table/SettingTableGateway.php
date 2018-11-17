@@ -5,11 +5,13 @@
  */
 namespace MSBios\Resource\Table;
 
+use MSBios\Resource\RecordRepository;
+
 /**
  * Class SettingTableGateway
  * @package MSBios\Resource\Table
  */
-class SettingTableGateway extends AbstractTableGateway
+class SettingTableGateway extends RecordRepository
 {
-
+    // ...
 }

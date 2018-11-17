@@ -32,15 +32,14 @@ interface RecordRepositoryInterface
     public function fetchAll($where = null, $order = null, $group = null, $having = null);
 
     /**
-     * @param ArrayObject $object
-     * @return int
-     * @throws \Exception
+     * @param RecordInterface $object
+     * @return mixed
      */
-    public function save(ArrayObject $object);
+    public function save(RecordInterface $object);
 
     /**
-     * @param $id
-     * @return int
+     * @param $where
+     * @return mixed
      */
-    public function delete($id);
+    public function delete($where);
 }
