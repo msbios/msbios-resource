@@ -5,25 +5,13 @@
  */
 namespace MSBios\Resource;
 
-use MSBios\Stdlib\AbstractObject;
-use Zend\Db\Adapter\AdapterInterface;
+use Zend\Db\RowGateway\RowGateway;
 
 /**
  * Class Record
  * @package MSBios\Resource
  */
-abstract class Record extends AbstractObject implements RecordInterface
+abstract class Record extends RowGateway implements RecordInterface
 {
-    /** @var AdapterInterface */
-    protected $adapter;
-
-    /**
-     * Record constructor.
-     * @param AdapterInterface|null $adapter
-     */
-    public function __construct(AdapterInterface $adapter = null)
-    {
-        $this->adapter = $adapter;
-        parent::__construct();
-    }
+    // ...
 }

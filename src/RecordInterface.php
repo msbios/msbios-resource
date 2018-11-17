@@ -5,11 +5,13 @@
  */
 namespace MSBios\Resource;
 
+use Zend\Db\RowGateway\RowGatewayInterface;
+
 /**
  * Interface Record
  * @package MSBios\Resource
  */
-interface RecordInterface
+interface RecordInterface extends RowGatewayInterface
 {
     // ...
 }

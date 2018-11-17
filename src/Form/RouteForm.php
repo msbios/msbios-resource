@@ -13,11 +13,5 @@ use Zend\Form\Form;
  */
 class RouteForm extends Form
 {
-    /**
-     * @inheritdoc
-     */
-    public function init()
-    {
-        parent::init();
-    }
+    // ...
 }

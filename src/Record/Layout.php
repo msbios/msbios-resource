@@ -26,7 +26,6 @@ class Layout extends Record implements TitleAwareInterface
      */
     public function getTemplate()
     {
-        $row = new RowGateway('', '');
         return $this->template;
     }
 
