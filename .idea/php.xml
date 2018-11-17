@@ -5,7 +5,6 @@
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-view" />
       <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/vendor/zfcampus/zf-development-mode" />
-      <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/psr/container" />
       <path value="$PROJECT_DIR$/vendor/symfony/dependency-injection" />
       <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
@@ -26,7 +25,6 @@
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-escaper" />
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-debug" />
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-inputfilter" />
-      <path value="$PROJECT_DIR$/vendor/zendframework/zend-log" />
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-db" />
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-dom" />
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-json" />
@@ -53,8 +51,6 @@
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
-      <path value="$PROJECT_DIR$/vendor/ccampbell/chromephp" />
-      <path value="$PROJECT_DIR$/vendor/jhuet/zdt-logger-module" />
       <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
       <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
       <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
@@ -83,6 +79,7 @@
       <path value="$PROJECT_DIR$/vendor/msbios/db" />
       <path value="$PROJECT_DIR$/vendor/msbios/msbios" />
       <path value="$PROJECT_DIR$/vendor/container-interop/container-interop" />
+      <path value="$PROJECT_DIR$/vendor/msbios/validator" />
     </include_path>
   </component>
 </project>

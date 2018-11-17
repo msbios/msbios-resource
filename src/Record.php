@@ -14,6 +14,16 @@ use Zend\Db\RowGateway\RowGateway;
 abstract class Record extends RowGateway implements RecordInterface
 {
     /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        foreach ($this->primaryKeyColumn as $pkColumnName) {
+            return $this[$pkColumnName];
+        }
+    }
+
+    /**
      * @return string|\Zend\Db\Sql\TableIdentifier
      */
     public function getTable()
