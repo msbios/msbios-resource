@@ -13,4 +13,5 @@ use MSBios\Resource\Record;
  */
 class Route extends Record
 {
+    // ...
 }

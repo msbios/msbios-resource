@@ -3,7 +3,10 @@
  * @access protected
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
+
 namespace MSBios\Resource\Record;
+
+use MSBios\Resource\RecordInterface;
 
 /**
  * Trait TitleAwareTrait
@@ -21,14 +24,25 @@ trait TitleAwareTrait
      */
     public function getTitle()
     {
+        if ($this instanceof RecordInterface) {
+            return $this['title'];
+        }
+
         return $this->title;
     }
 
     /**
-     * @param mixed $title
+     * @param $title
+     * @return $this
      */
     public function setTitle($title)
     {
-        $this->title = $title;
+        if ($this instanceof RecordInterface) {
+            $this['title'] = $title;
+        } else {
+            $this->title = $title;
+        }
+
+        return $this;
     }
 }

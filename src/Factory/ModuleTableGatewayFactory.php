@@ -9,6 +9,7 @@ use Interop\Container\ContainerInterface;
 use MSBios\Db\TableGateway\TableGateway;
 use MSBios\Resource\Record\Module;
 use MSBios\Resource\RecordInterface;
+use MSBios\Resource\Resources;
 use MSBios\Resource\Table\ModuleTableGateway;
 use Zend\Db\Adapter\AdapterInterface;
 use Zend\Db\TableGateway\Feature\RowGatewayFeature;
@@ -32,7 +33,7 @@ class ModuleTableGatewayFactory implements FactoryInterface
         $adapter = $container->get(AdapterInterface::class);
 
         /** @var RecordInterface $record */
-        $record = new Module('id', 'sys_t_layouts', $adapter);
+        $record = new Module('id', Resources::SYS_T_MODULES, $adapter);
 
         /** @var RowGatewayFeature $feature */
         $feature = new RowGatewayFeature($record);

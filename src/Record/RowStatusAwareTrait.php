@@ -5,15 +5,15 @@
  */
 namespace MSBios\Resource\Record;
 
+use MSBios\Resource\RecordInterface;
+
 /**
  * Trait RowStatusAwareTrait
  * @package MSBios\Resource\Record
  */
 trait RowStatusAwareTrait
 {
-    /**
-     * @var bool
-     */
+    /** @var bool */
     private $rowStatus = true;
 
     /**
@@ -21,14 +21,25 @@ trait RowStatusAwareTrait
      */
     public function isRowStatus()
     {
+        if ($this instanceof RecordInterface) {
+            return $this['rowstatus'];
+        }
+
         return $this->rowStatus;
     }
 
     /**
-     * @param bool $rowStatus
+     * @param $rowStatus
+     * @return $this
      */
     public function setRowStatus($rowStatus)
     {
-        $this->rowStatus = $rowStatus;
+        if ($this instanceof RecordInterface) {
+            $this['rowstatus'] = $rowStatus;
+        } else {
+            $this->rowStatus = $rowStatus;
+        }
+
+        return $this;
     }
 }

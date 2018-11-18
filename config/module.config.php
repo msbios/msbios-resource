@@ -6,6 +6,7 @@
 
 namespace MSBios\Resource;
 
+use MSBios\Factory\ModuleFactory;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
@@ -13,7 +14,7 @@ return [
     'service_manager' => [
         'factories' => [
             Module::class =>
-                Factory\ModuleFactory::class
+                ModuleFactory::class
         ]
     ],
 
