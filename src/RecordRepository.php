@@ -101,22 +101,29 @@ class RecordRepository implements RecordRepositoryInterface
         }
 
         /** @var array $data */
-        $data = $values->toArray();
+        $data = [];
 
-        /** @var int $id */
-        $id = (int)$data['id'];
+        if ($values instanceof ArrayObject) {
+            /** @var array $data */
+            $data = $values->getArrayCopy();
+        }
 
         /** @var TableGatewayInterface $tableGateway */
         $tableGateway = $this->tableGateway;
 
-        if (! $id) {
+        if (! isset($data['id']) || empty($data['id'])) {
             return $tableGateway->insert($data);
         }
 
         try {
+
+            /** @var int $id */
+            $id = (int)$data['id'];
+
             if ($this->fetch($id)) {
                 $tableGateway->update($data, ['id' => $id]);
             }
+
         } catch (RowNotFoundException $exception) {
             throw new \Exception('Row with id does not exist!');
         }
