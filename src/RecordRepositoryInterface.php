@@ -32,10 +32,10 @@ interface RecordRepositoryInterface
     public function fetchAll($where = null, $order = null, $group = null, $having = null);
 
     /**
-     * @param RecordInterface $object
+     * @param $values
      * @return mixed
      */
-    public function save(RecordInterface $object);
+    public function save($values);
 
     /**
      * @param $where

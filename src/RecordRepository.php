@@ -9,7 +9,6 @@ namespace MSBios\Resource;
 use MSBios\Db\TableGateway\TableGatewayInterface;
 use MSBios\Resource\Exception\RowNotFoundException;
 use Zend\Db\ResultSet\ResultSet;
-use Zend\Db\RowGateway\RowGateway;
 use Zend\Paginator\Adapter\AdapterInterface;
 use Zend\Paginator\Adapter\DbTableGateway as TableGatewayPaginator;
 use Zend\Paginator\Paginator;
@@ -90,27 +89,33 @@ class RecordRepository implements RecordRepositoryInterface
     }
 
     /**
-     * @param RecordInterface|RowGateway $record
-     * @return mixed
+     * @param $values
+     * @return mixed|void
      * @throws \Exception
      */
-    public function save(RecordInterface $record)
+    public function save($values)
     {
+        if ($values instanceof RecordInterface) {
+            $values->save();
+            return;
+        }
+
         /** @var array $data */
-        $data = $record->toArray();
+        $data = $values->toArray();
 
         /** @var int $id */
         $id = (int)$data['id'];
 
+        /** @var TableGatewayInterface $tableGateway */
+        $tableGateway = $this->tableGateway;
+
         if (! $id) {
-            return $this->tableGateway
-                ->insert($data);
+            return $tableGateway->insert($data);
         }
 
         try {
             if ($this->fetch($id)) {
-                $this->tableGateway
-                    ->update($data, ['id' => $id]);
+                $tableGateway->update($data, ['id' => $id]);
             }
         } catch (RowNotFoundException $exception) {
             throw new \Exception('Row with id does not exist!');
@@ -128,7 +133,7 @@ class RecordRepository implements RecordRepositoryInterface
         }
 
         if ($where instanceof RecordInterface) {
-            $where = ['id' => (int)$where['id']];
+            $where = ['id' => (int)$where->getId()];
         }
 
         return $this
