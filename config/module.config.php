@@ -52,18 +52,20 @@ return [
 
     'hydrators' => [
         'factories' => [
+            // ...
         ],
     ],
 
     'table_manager' => [
         'factories' => [
-            // Tables
             Table\LayoutTableGateway::class =>
-                Factory\LayoutTableGatewayFactory::class
+                Factory\LayoutTableGatewayFactory::class,
+            Table\ModuleTableGateway::class =>
+                Factory\ModuleTableGatewayFactory::class
         ]
     ],
 
     Module::class => [
-        // Some Module Configuration
+        // ...
     ]
 ];
