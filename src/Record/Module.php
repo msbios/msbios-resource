@@ -16,23 +16,21 @@ class Module extends Record implements TitleAwareInterface
     use TitleAwareTrait;
 
     /**
-     * @var
-     */
-    private $module;
-
-    /**
      * @return mixed
      */
     public function getModule()
     {
-        return $this->module;
+        return $this['module'];
     }
 
     /**
      * @param $module
+     * @return $this
      */
     public function setModule($module)
     {
-        $this->module = $module;
+
+        $this['module'] = $module;
+        return $this;
     }
 }
